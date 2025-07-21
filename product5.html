@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل المنتج</title>
+  <style>
+    body {
+      font-family: 'Calibri Light', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 10px;
+  direction: rtl;
+}
+
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Calibri Light', sans-serif;
+  color: #222;
+}
+
+.brand-name .arabic-name {
+  margin-right: 5px;
+  font-weight: normal;
+  color: #555;
+}
+
+
+    .product-container {
+      max-width: 500px;
+      margin: auto;
+      background: linear-gradient(to bottom, #eee, #ddd);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .slider {
+      position: relative;
+    }
+
+    .slider img {
+      width: 65%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .thumbnails img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .thumbnails img.active {
+      border-color: black;
+    }
+
+
+.product-info-box {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 30px auto;
+  font-family: 'Calibri Light', sans-serif;
+  text-align: right; /* عشان العربي */
+}
+
+.product-name {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #111;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+
+.product-price {
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  direction: rtl; /* علشان العربي يمشي صح */
+}
+
+.old-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 16px;
+}
+
+.new-price {
+  color: #e60000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+/* باقي الأكواد للمقاسات نفس اللي قبل كده */
+
+.size-section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.size-boxes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.size-card {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.size-card:hover {
+  transform: scale(1.05);
+}
+
+.size-label {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.size-info {
+  font-size: 14px;
+  color: #666;
+}
+
+
+   
+   .size-section {
+  margin-top: 30px;
+  font-family: 'Calibri Light', sans-serif;
+  color: #333;
+}
+
+.size-section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.size-boxes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.size-card {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.size-card:hover {
+  transform: scale(1.05);
+}
+
+.size-label {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.size-info {
+  font-size: 14px;
+  color: #666;
+}
+
+   
+   
+    .options {
+      margin-top: 20px;
+    }
+
+    select, input[type="number"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin: 10px;
+      width: 80%;
+    }
+
+    .add-to-cart {
+      background-color: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+
+ <div class="brand-header">
+  <span class="arabic-name">هيبة</span><span class="brand-name">Hybah </span>
+   <img src="Logos/Hybah logo.jpg" alt="Hybah Logo" class="brand-logo">
+</div>
+
+
+  <div class="product-container">
+    <div class="slider">
+      <img src="products/venom shirt front.png" id="mainImage">
+    </div>
+    <div class="thumbnails">
+      <img src="products/venom shirt front.png" class="active" onclick="changeImage(this)">
+      <img src="products/shirt back.png" onclick="changeImage(this)">
+    </div>
+
+<div class="product-info-box">
+  <h2 class="product-name">تيشيرت فينوم . Compression venom shirt</h2>
+ <div class="product-price">
+  <span class="new-price">370 جنيه</span>
+  <p>بدلا من</p>
+   <span class="old-price">420 جنيه</span>
+</div>
+
+
+  <div class="size-section">
+    <h3>المقاسات المتاحة:</h3>
+    <div class="size-boxes">
+      <div class="size-card">
+        <span class="size-label">L</span>
+        <p class="size-info">60 - 75 كجم</p>
+      </div>
+      <div class="size-card">
+        <span class="size-label">XL</span>
+        <p class="size-info">75 - 85 كجم</p>
+      </div>
+      <div class="size-card">
+        <span class="size-label">2XL</span>
+        <p class="size-info">85 - 100 كجم</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
+
+  <script>
+    function changeImage(elem) {
+      document.getElementById('mainImage').src = elem.src;
+      document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+      elem.classList.add('active');
+    }
+
+    function addToCart() {
+      const size = document.getElementById("sizeSelect").value;
+      const quantity = document.getElementById("quantityInput").value;
+      alert(`تمت إضافة ${quantity} قطعة من المقاس ${size} إلى السلة.`);
+      // هنا ممكن تحفظ البيانات في localStorage لو حبيت
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Hybah هيبة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+    body { background-color: #f2f2f2; }
+
+     header {
+      background-color: #585858;
+      color: white;
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .header-container {
+  background: linear-gradient(135deg, #a1a1a15f, #dcdcdc7e);
+  margin: 20px auto;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header {
+  background: linear-gradient(to bottom, #d3d3d3, #f2f2f2);
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-box {
+  background: linear-gradient(to bottom, #e4e4e4c6, #979797); /* تدرج رمادي */
+  padding: 8px 30px;
+  border-radius: 30px;
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto; /* علشان يفضل في النص */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  position: relative;
+  text-align: center;
+}
+
+
+
+.top-icons {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.top-icons img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.header-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1px;
+}
+
+.brand-name {
+  font-size: 26px;
+  color: #1c1b1b;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+}
+
+
+    .top-icons {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .top-icons img {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+    }
+
+    .header-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .search-box {
+      margin: 10px auto;
+      width: 60%;
+      max-width: 400px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 15px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .delivery-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+   .products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px 10px;
+  justify-items: center;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* خليها مربعة تقريبا */
+  object-fit: cover;
+}
+
+
+    .product-card .title {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 10px 0 5px;
+    }
+
+    .product-card .price {
+      color: #000;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .product-card .old-price {
+      color: #999;
+      text-decoration: line-through;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+
+    .product-card .discount {
+      color: #e60000;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+
+@media (max-width: 768px) {
+  .header-box {
+    padding: 20px 15px;
+    border-radius: 20px;
+  }
+
+  .header-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .search-box {
+    width: 90%;
+  }
+
+  .search-box input {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .top-icons {
+    top: 10px;
+    left: 10px;
+    gap: 10px;
+  }
+
+  .top-icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+
+  .product-card .title {
+    font-size: 14px;
+  }
+
+  .product-card .price {
+    font-size: 15px;
+  }
+}
+
+/* Animation for page entrance */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-on-load {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+ 
+
+  <header>
+  <div class="header-box">
+    <div class="top-icons">
+      <a href="https://wa.me/+201027561132" target="_blank">
+        <img src="Logos/Whatsapp.png" alt="واتساب">
+      </a>
+      <a href="https://www.instagram.com/hybah.eg" target="_blank">
+        <img src="Logos/Instagram.png" alt="إنستجرام">
+      </a>
+      <a href="https://www.facebook.com/share/19SqWq7PaV/?mibextid=wwXIfr" target="_blank">
+        <img src="Logos/Facebook.png" alt="فيسبوك">
+      </a>
+      <a href="https://www.tiktok.com/@hybah.eg" target="_blank">
+        <img src="Logos/Tiktok.png" alt="تيك توك">
+      </a>
+    </div>
+
+    <img src="Logos/Hybah logo.jpg" alt="HYBAH Logo" class="header-logo" />
+    <h1 class="brand-name">هيبة 𝑯𝒀𝑩𝑨𝑯</h1>
+    <div class="subtitle">ملابس رياضية</div>
+
+    <div class="search-box">
+      <input type="text" placeholder="بحث Search ...">
+    </div>
+    <div class="delivery-note">التسليم خلال 1 - 6 يوم عمل • </div> <br>
+    <div class="delivery-note">لعمل طلب او اوردر يرجى التواصل من احدى الصفحات العلويه</div> <br>
+  </div>
+</header>
+
+
+
+  <section class="products">
+    <div class="product-card" onclick="window.location.href='product1.html'">
+      <img src="products/hybah shirt front.png" alt="T-shirt 1">
+      <div class="title">Compression hybah shirt</div>
+      <span class="old-price">420 ج.م</span>
+      <div class="price">
+        370 ج.م
+      </div>
+    </div>
+
+    <div class="product-card" onclick="window.location.href='product2.html'">
+      <img src="products/death shirt front.png" alt="T-shirt 2">
+      <div class="title">Compression death shirt</div>
+      <span class="old-price">420 ج.م</span>
+      <div class="price">
+   390 ج.م
+      </div>
+    </div>
+
+    <div class="product-card" onclick="window.location.href='product3.html'">
+      <img src="products/white batman shirt front.png" alt="T-shirt 3">
+      <div class="title">Compression batman shirt</div>
+      <span class="old-price">420 ج.م</span>
+      <div class="price">
+        370 ج.م
+      </div>
+    </div>
+
+    <div class="product-card" onclick="window.location.href='product4.html'">
+      <img src="products/black batman shirt front.png" alt="T-shirt 3">
+      <div class="title">Compression batman shirt 2</div>
+      <span class="old-price">420 ج.م</span>
+      <div class="price">
+        370 ج.م
+      </div>
+    </div>
+
+
+<div class="product-card" onclick="window.location.href='product5.html'">
+      <img src="products/venom shirt front.png" alt="T-shirt 3">
+      <div class="title">Compression venom shirt</div>
+      <span class="old-price">420 ج.م</span>
+      <div class="price">
+        370 ج.م
+      </div>
+    </div>
+
+
+
+  </section>
+  </font>
+<center>
+  <footer style="text-align: center; padding: 20px; font-size: 14px;">
+  <a href="policy.html" style="color: #555; text-decoration: underline;">
+    سياسة الاستبدال والاسترجاع
+  </a>
+</footer>
+
+</center>
+
+
+
+</body>
+</html>
