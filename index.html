@@ -1,375 +1,332 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Hybah هيبة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل المنتج</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-    body { background-color: #f2f2f2; }
-
-     header {
-      background-color: #585858;
-      color: white;
+    body {
+      font-family: 'Calibri Light', sans-serif;
+      background-color: #f0f0f0;
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 20px;
     }
 
-    header h1 {
-      font-size: 32px;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    .header-container {
-  background: linear-gradient(135deg, #a1a1a15f, #dcdcdc7e);
-  margin: 20px auto;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 800px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-header {
-  background: linear-gradient(to bottom, #d3d3d3, #f2f2f2);
-  padding: 40px 0;
+    .brand-header {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 10px;
+  direction: rtl;
 }
 
-.header-box {
-  background: linear-gradient(to bottom, #e4e4e4c6, #979797); /* تدرج رمادي */
-  padding: 8px 30px;
-  border-radius: 30px;
-  width: 96%;
-  max-width: 1200px;
-  margin: 0 auto; /* علشان يفضل في النص */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-  position: relative;
-  text-align: center;
-}
-
-
-
-.top-icons {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  gap: 15px;
-}
-
-.top-icons img {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.header-logo {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
+.brand-logo {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin-bottom: 1px;
+  object-fit: cover;
 }
 
 .brand-name {
-  font-size: 26px;
-  color: #1c1b1b;
+  font-size: 20px;
   font-weight: bold;
-  margin: 10px 0 5px;
+  font-family: 'Calibri Light', sans-serif;
+  color: #222;
 }
 
-.subtitle {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 12px 18px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-  outline: none;
+.brand-name .arabic-name {
+  margin-right: 5px;
+  font-weight: normal;
+  color: #555;
 }
 
 
-    .top-icons {
-      position: absolute;
-      top: 15px;
-      left: 20px;
-      display: flex;
-      gap: 15px;
-    }
-
-    .top-icons img {
-      width: 22px;
-      height: 22px;
-      cursor: pointer;
-    }
-
-    .header-logo {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-    }
-
-    .brand-name {
-      font-size: 24px;
-      margin-top: 5px;
-      font-weight: bold;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .search-box {
-      margin: 10px auto;
-      width: 60%;
-      max-width: 400px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 10px 15px;
+    .product-container {
+      max-width: 500px;
+      margin: auto;
+      background: linear-gradient(to bottom, #eee, #ddd);
       border-radius: 15px;
-      border: 1px solid #ccc;
-      font-size: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
     }
 
-    .delivery-note {
-      font-size: 13px;
-      color: #666;
-      margin-top: 5px;
+    .slider {
+      position: relative;
     }
 
-   .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
-  padding: 20px 10px;
-  justify-items: center;
-}
-
-.product-card {
+    .slider img {
   width: 100%;
-  max-width: 200px;
-  background: #fff;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
+}
+
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .thumbnails img {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .thumbnails img.active {
+      border-color: black;
+    }
+
+
+.product-info-box {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 30px auto;
+  font-family: 'Calibri Light', sans-serif;
+  text-align: right; /* عشان العربي */
+}
+
+.product-name {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #111;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+
+.product-price {
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  direction: rtl; /* علشان العربي يمشي صح */
+}
+
+.old-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 16px;
+}
+
+.new-price {
+  color: #e60000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+/* باقي الأكواد للمقاسات نفس اللي قبل كده */
+
+.size-section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.size-boxes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.size-card {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 12px;
   text-align: center;
-  padding-bottom: 10px;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
 
-.product-card img {
-  width: 100%;
-  height: 200px; /* خليها مربعة تقريبا */
-  object-fit: cover;
+.size-card:hover {
+  transform: scale(1.05);
+}
+
+.size-label {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.size-info {
+  font-size: 14px;
+  color: #666;
 }
 
 
-    .product-card .title {
-      font-size: 15px;
-      font-weight: 600;
-      margin: 10px 0 5px;
+   
+   .size-section {
+  margin-top: 30px;
+  font-family: 'Calibri Light', sans-serif;
+  color: #333;
+}
+
+.size-section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.size-boxes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.size-card {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.size-card:hover {
+  transform: scale(1.05);
+}
+
+.size-label {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.size-info {
+  font-size: 14px;
+  color: #666;
+}
+
+   
+   
+    .options {
+      margin-top: 20px;
     }
 
-    .product-card .price {
-      color: #000;
-      font-size: 20px;
-      font-weight: bold;
+    select, input[type="number"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin: 10px;
+      width: 80%;
     }
 
-    .product-card .old-price {
-      color: #999;
-      text-decoration: line-through;
-      font-size: 13px;
-      margin-right: 5px;
+    .add-to-cart {
+      background-color: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 80%;
     }
 
-    .product-card .discount {
-      color: #e60000;
-      font-size: 13px;
-      margin-right: 5px;
-    }
-
-@media (max-width: 768px) {
-  .header-box {
-    padding: 20px 15px;
-    border-radius: 20px;
+@media (max-width: 600px) {
+  .slider img {
+    height: auto;
   }
 
-  .header-logo {
-    width: 70px;
-    height: 70px;
-  }
-
-  .brand-name {
-    font-size: 20px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-  }
-
-  .search-box {
-    width: 90%;
-  }
-
-  .search-box input {
+  .size-card {
+    width: 80px;
     padding: 10px;
-    font-size: 13px;
   }
 
-  .top-icons {
-    top: 10px;
-    left: 10px;
-    gap: 10px;
-  }
-
-  .top-icons img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .product-card {
-    width: 90%;
-  }
-
-  .product-card img {
-    height: 220px;
-  }
-
-  .product-card .title {
-    font-size: 14px;
-  }
-
-  .product-card .price {
-    font-size: 15px;
+  .product-container, .product-info-box {
+    padding: 15px;
   }
 }
-
-/* Animation for page entrance */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.animate-on-load {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
 
 
   </style>
 </head>
 <body>
 
- 
+ <div class="brand-header">
+  <span class="arabic-name">هيبة</span><span class="brand-name">Hybah </span>
+   <img src="Logos/Hybah logo.jpg" alt="Hybah Logo" class="brand-logo">
+</div>
 
-  <header>
-  <div class="header-box">
-    <div class="top-icons">
-      <a href="https://wa.me/+201027561132" target="_blank">
-        <img src="Logos/Whatsapp.png" alt="واتساب">
-      </a>
-      <a href="https://www.instagram.com/hybah.eg" target="_blank">
-        <img src="Logos/Instagram.png" alt="إنستجرام">
-      </a>
-      <a href="https://www.facebook.com/share/19SqWq7PaV/?mibextid=wwXIfr" target="_blank">
-        <img src="Logos/Facebook.png" alt="فيسبوك">
-      </a>
-      <a href="https://www.tiktok.com/@hybah.eg" target="_blank">
-        <img src="Logos/Tiktok.png" alt="تيك توك">
-      </a>
+
+  <div class="product-container">
+    <div class="slider">
+      <img src="products/hybah shirt front.png" id="mainImage">
+    </div>
+    <div class="thumbnails">
+      <img src="products/hybah shirt front.png" class="active" onclick="changeImage(this)">
+      <img src="products/shirt back.png" onclick="changeImage(this)">
     </div>
 
-    <img src="Logos/Hybah logo.jpg" alt="HYBAH Logo" class="header-logo" />
-    <h1 class="brand-name">هيبة 𝑯𝒀𝑩𝑨𝑯</h1>
-    <div class="subtitle">ملابس رياضية</div>
+<div class="product-info-box">
+  <h2 class="product-name">تيشيرت هيبة . Compression Hybah shirt
+  </h2>
+ <div class="product-price">
+  <span class="new-price">370 جنيه</span>
+  <p>بدلا من</p>
+   <span class="old-price">420 جنيه</span>
+</div>
 
-    <div class="search-box">
-      <input type="text" placeholder="بحث Search ...">
+
+  <div class="size-section">
+    <h3>المقاسات المتاحة:</h3>
+    <div class="size-boxes">
+      <div class="size-card">
+        <span class="size-label">L</span>
+        <p class="size-info">60 - 75 كجم</p>
+      </div>
+      <div class="size-card">
+        <span class="size-label">XL</span>
+        <p class="size-info">75 - 85 كجم</p>
+      </div>
+      <div class="size-card">
+        <span class="size-label">2XL</span>
+        <p class="size-info">85 - 100 كجم</p>
+      </div>
     </div>
-    <div class="delivery-note">التسليم خلال 1 - 6 يوم عمل • </div> <br>
-    <div class="delivery-note">لعمل طلب او اوردر يرجى التواصل من احدى الصفحات العلويه</div> <br>
   </div>
-</header>
+</div>
 
+   
 
+  <script>
+    function changeImage(elem) {
+      document.getElementById('mainImage').src = elem.src;
+      document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+      elem.classList.add('active');
+    }
 
-  <section class="products">
-    <div class="product-card" onclick="window.location.href='product1.html'">
-      <img src="products/hybah shirt front.png" alt="T-shirt 1">
-      <div class="title">Compression hybah shirt</div>
-      <span class="old-price">420 ج.م</span>
-      <div class="price">
-        370 ج.م
-      </div>
-    </div>
-
-    <div class="product-card" onclick="window.location.href='product2.html'">
-      <img src="products/death shirt front.png" alt="T-shirt 2">
-      <div class="title">Compression death shirt</div>
-      <span class="old-price">420 ج.م</span>
-      <div class="price">
-   390 ج.م
-      </div>
-    </div>
-
-    <div class="product-card" onclick="window.location.href='product3.html'">
-      <img src="products/white batman shirt front.png" alt="T-shirt 3">
-      <div class="title">Compression batman shirt</div>
-      <span class="old-price">420 ج.م</span>
-      <div class="price">
-        370 ج.م
-      </div>
-    </div>
-
-    <div class="product-card" onclick="window.location.href='product4.html'">
-      <img src="products/black batman shirt front.png" alt="T-shirt 3">
-      <div class="title">Compression batman shirt 2</div>
-      <span class="old-price">420 ج.م</span>
-      <div class="price">
-        370 ج.م
-      </div>
-    </div>
-
-
-<div class="product-card" onclick="window.location.href='product5.html'">
-      <img src="products/venom shirt front.png" alt="T-shirt 3">
-      <div class="title">Compression venom shirt</div>
-      <span class="old-price">420 ج.م</span>
-      <div class="price">
-        370 ج.م
-      </div>
-    </div>
-
-
-
-  </section>
-  </font>
-<center>
-  <footer style="text-align: center; padding: 20px; font-size: 14px;">
-  <a href="policy.html" style="color: #555; text-decoration: underline;">
-    سياسة الاستبدال والاسترجاع
-  </a>
-</footer>
-
-</center>
-
-
-
+    function addToCart() {
+      const size = document.getElementById("sizeSelect").value;
+      const quantity = document.getElementById("quantityInput").value;
+      alert(`تمت إضافة ${quantity} قطعة من المقاس ${size} إلى السلة.`);
+      // هنا ممكن تحفظ البيانات في localStorage لو حبيت
+    }
+  </script>
 </body>
 </html>
