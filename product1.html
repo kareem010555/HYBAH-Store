@@ -56,11 +56,12 @@
     }
 
     .slider img {
-      width: 65%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
 
     .thumbnails {
       display: flex;
@@ -246,6 +247,23 @@
       margin-top: 20px;
       width: 80%;
     }
+
+@media (max-width: 600px) {
+  .slider img {
+    height: auto;
+  }
+
+  .size-card {
+    width: 80px;
+    padding: 10px;
+  }
+
+  .product-container, .product-info-box {
+    padding: 15px;
+  }
+}
+
+
   </style>
 </head>
 <body>
